@@ -1,5 +1,5 @@
 {
-  "name": "DDiscordBotV2",
+  "name": "ddiscordbotv2",
   "version": "1.0.0",
   "description": "a discord music bot with guild commands",
   "main": "index.js",
