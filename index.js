@@ -34,6 +34,7 @@ client.registry
   .registerDefaultTypes()
   .registerGroups([
     ['music', 'Music Command Group'],
+    ['expanse', 'expanse commands'],
     ['other', 'random types of commands group'],
     ['guild', 'guild related commands']
   ])
@@ -77,22 +78,6 @@ client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
   if (!channel) return;
   channel.send(`Welcome ${member}!`);
-});
-
-client.on("messageDelete", (messageDelete) => {
-
-  const channel = client.channels.cache.find(ch => ch.name === 'bot-logs');
-  channel.send(` Channel: \`${messageDelete.channel.name}\`, Message : \`${messageDelete.content}\`, By \`${messageDelete.author.username}\` was deleted.`);
-
-});
-
-client.on('message', async message => {
-  if (message.author.bot) return;
-  else if (!message.content.startsWith(prefix)) return;
-  else {
-    const channel = client.channels.cache.find(ch => ch.name === 'bot-logs');
-    channel.send(`${message.author.username} issued command \`${message}\`.`);
-  }
 });
 
 client.login(token);
